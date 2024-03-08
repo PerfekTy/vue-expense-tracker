@@ -1,47 +1,27 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+import HeaderC from "./components/HeaderC.vue";
+import Balance from "./components/BalanceC.vue";
+import IncomeExpenses from "./components/IncomeExpenses.vue";
+import TransitionList from "./components/TrasactionList.vue";
+import AddTrasaction from "./components/AddTransaction.vue";
+
+export default {
+  components: {
+    HeaderC,
+    Balance,
+    IncomeExpenses,
+    TransitionList,
+    AddTrasaction,
+  },
+};
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <HeaderC />
+  <div class="container">
+    <Balance />
+    <IncomeExpenses />
+    <TransitionList />
+    <AddTrasaction />
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
