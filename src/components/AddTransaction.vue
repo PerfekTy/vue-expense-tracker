@@ -35,6 +35,10 @@ const onSubmit = () => {
     return toast.error("Both fields must be filled.");
   }
 
+  if (typeof text.value !== "string") {
+    return toast.error("Field text must be a text.");
+  }
+
   const transactionData = {
     text: text.value,
     amount: parseFloat(amount.value),
